@@ -133,7 +133,7 @@ impl Consensus for EthBeaconConsensus {
         if self.chain_spec.is_taiko() {
             validate_against_parent_timestamp_inclusive(header, parent)?;
         } else {
-            validate_against_parent_timestamp(header, parent)?;
+            validate_against_parent_timestamp_inclusive(header, parent)?; // by kasplex
 
             // TODO Check difficulty increment between parent and self
             // Ace age did increment it by some formula that we need to follow.
